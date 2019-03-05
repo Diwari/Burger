@@ -1,0 +1,54 @@
+
+<div class= "container">
+  <div class="jumbotron"> 
+  <h1> Eat Dah Burger</h1>
+  <p>Burger Orders,Burger Pickup.</p>
+  
+   <form>
+  <div class="form-group">
+    <label for="newburger">Fresh off the Grill</label>
+    <input type="text"  id="newburger" name="burger">
+    <button type="submit" class="btn btn-success" id="addburger">
+      <span class="fa fa-thumbs-up"></span>
+    </button>
+  </div>
+  </div>
+</form>
+  </panel>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading" id="leftside"><strong>Order Up</strong></div>
+      <div class="panel-body">
+        <ul>
+          {{#each burgers}}
+          {{#if devoured}}
+          <span><strong>{{this.id}} - {{this.burger_name}}</strong></span>
+          <button type="button" class="eatburger btn btn-warning" id="eatbutton" data-id="{{this.id}}" data-newDevoured={{devour}}><span class= "fa fa-usd"></span></button>
+          {{/if}}
+          {{/each}}
+        </ul>
+        <h4>add content here</h4>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading" id="rightside"><strong>Order Up</strong></div>
+      <div class="panel-body">
+        <ul>
+          {{#each burgers}}
+          {{#if devoured}}
+          <span><strong>{{this.id}} - {{this.burger_name}}</strong></span>
+          <button type="button" class="deleteburger btn btn-warning" id="deletebutton" data-id="{{this.id}}" data-newDevoured={{devour}}><span class= "fa fa-trash"></span></button>
+          {{/if}}
+          {{/each}}
+        </ul>
+        <h4>add content here</h4>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
