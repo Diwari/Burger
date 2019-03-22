@@ -8,8 +8,8 @@
   <div class="form-group">
     <label for="newburger">Fresh off the Grill</label>
     <input type="text"  id="newburger" name="burger">
-    <button type="submit" class="btn btn-success" id="addburger">
-      <span class="fa fa-thumbs-up"></span>
+    <button type="submit" class="addburger btn btn-success" id="addburger">
+      <i class="fa fa-thumbs-up"></i>
     </button>
   </div>
   </div>
@@ -22,14 +22,14 @@
       <div class="panel-heading" id="leftside"><strong>Order Up</strong></div>
       <div class="panel-body">
         <ul>
-          {{#each burgers}}
-          {{#if devoured}}
+          {{#each burger}}
+          {{#unless this.devoured}}
           <span><strong>{{this.id}} - {{this.burger_name}}</strong></span>
           <button type="button" class="eatburger btn btn-warning" id="eatbutton" data-id="{{this.id}}" data-newDevoured={{devour}}><span class= "fa fa-usd"></span></button>
-          {{/if}}
+          {{/unless}}
           {{/each}}
         </ul>
-        <h4>add content here</h4>
+        
       </div>
     </div>
   </div>
@@ -39,14 +39,14 @@
       <div class="panel-heading" id="rightside"><strong>Order Up</strong></div>
       <div class="panel-body">
         <ul>
-          {{#each burgers}}
-          {{#if devoured}}
+          {{#each burger}}
+          {{#if this.devoured}}
           <span><strong>{{this.id}} - {{this.burger_name}}</strong></span>
-          <button type="button" class="deleteburger btn btn-warning" id="deletebutton" data-id="{{this.id}}" data-newDevoured={{devour}}><span class= "fa fa-trash"></span></button>
+          {{!-- <button type="button" class="deleteburger btn btn-warning" id="deletebutton" data-id="{{this.id}}" data-newDevoured={{devour}}><span class= "fa fa-trash"></span></button> --}}
           {{/if}}
           {{/each}}
         </ul>
-        <h4>add content here</h4>
+        
       </div>
     </div>
   </div>
